@@ -3,11 +3,11 @@
 .product-catalog-container {
   margin-top: 95px;
   background-color: $white;
-  width: 100%;
+  width: 80%;
   margin-left: auto;
   margin-right: auto;
-  padding-left: 12%;
-  padding-right: 12%;
+  padding-left: 6%;
+  padding-right: 5%;
   padding-bottom: 10%;
 
   .product-catalog-heading {
@@ -27,6 +27,7 @@
     margin-bottom: 10px;
     width: 140px;
     position: relative;
+    cursor: pointer;
 
     img {
       width: 95%;
@@ -46,5 +47,9 @@
       font-size: 14px;
       font-weight: bold;
     }
+  }
+
+  @media only screen and (max-width: 768px) {
+    width: 100%;
   }
 }

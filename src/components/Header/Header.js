@@ -7,7 +7,7 @@ class Header extends Component {
   render() {
     const loginMenuItem = (
       <li className="nav-item">
-        <a className="nav-link" href="#" onClick={this.props.login}>
+        <a className="nav-link" href="/" onClick={this.props.login}>
           Login / Sign-up
         </a>
       </li>
@@ -16,24 +16,24 @@ class Header extends Component {
     return (
       <div>
         <header className="header">
-          <div className="logo">
+          <div className="logo" onClick={() => (window.location = '#')}>
             <span className="logo-big-text">eazy</span>
             <span className="logo-small-text">.my</span>
           </div>
           <ul className="nav justify-content-end">
             <li className="nav-item">
-              <a className="nav-link" href="#">
+              <a className="nav-link" href="/">
                 Categories
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">
+              <a className="nav-link" href="/">
                 Notification
               </a>
             </li>
             {this.props.isLoggedIn ? null : loginMenuItem}
             <li className="nav-item">
-              <a className="nav-link" href="#">
+              <a className="nav-link" href="/">
                 Help
               </a>
             </li>

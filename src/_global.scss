@@ -28,3 +28,13 @@ $danger-modal-bg: #ed6e7e;
   -ms-border-radius: $radius;
   border-radius: $radius;
 }
+
+@import url(https://fonts.googleapis.com/icon?family=Material+Icons);
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Open Sans', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

@@ -7,7 +7,6 @@ import { listProducts } from '../../actions/productListActions';
 class ProductCatalog extends Component {
   constructor(props) {
     super(props);
-
     this.props.listProducts();
   }
 
@@ -21,7 +20,7 @@ class ProductCatalog extends Component {
           {this.props.productListData &&
             this.props.productListData.map((item, i) => (
               <div key={i} className="col-md-2 col-6">
-                <div className="product-catalog">
+                <div className="product-catalog" onClick={() => (window.location = `#/view/${item.id}`)}>
                   <img src={ProductImage} alt={item.attributes && item.attributes.title} />
                   <div className="product-description">{item.attributes && item.attributes.title}</div>
                   <div className="product-price">{item.attributes && item.attributes.price}</div>
