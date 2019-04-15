@@ -1,24 +1,24 @@
 import React, { Component } from 'react';
-import './ProductCatalog.scss';
-import ProductImage from './productImage.png';
+import '../../ProductCatalog/ProductCatalog.scss';
+import ProductImage from '../../ProductCatalog/productImage.png';
 import { connect } from 'react-redux';
-import { listProducts } from '../../actions/productListActions';
+import { listSimilarProducts } from '../../../../actions/productActions';
 
-class ProductCatalog extends Component {
+class SimilarProducts extends Component {
   constructor(props) {
     super(props);
-    this.props.listProducts();
+    this.props.listSimilarProducts(this.props.selectedProductId);
   }
 
   render() {
     return (
       <div className="product-catalog-container">
         <div className="row">
-          <div className="product-catalog-heading">LISTING</div>
+          <div className="product-catalog-heading">SIMILAR ITEMS</div>
         </div>
         <div className="row">
-          {this.props.productListData &&
-            this.props.productListData.map((item, i) => (
+          {this.props.similarProductsData &&
+            this.props.similarProductsData.map((item, i) => (
               <div key={i} className="col-md-2 col-6">
                 <div className="product-catalog" onClick={() => (window.location = `#/view/${item.id}`)}>
                   <img src={ProductImage} alt={item.attributes && item.attributes.title} />
@@ -34,10 +34,10 @@ class ProductCatalog extends Component {
 }
 
 const mapStateToProps = state => ({
-  productListData: state.productsListState.productListData
+  similarProductsData: state.productState.similarProductsData
 });
 
 export default connect(
   mapStateToProps,
-  { listProducts }
-)(ProductCatalog);
+  { listSimilarProducts }
+)(SimilarProducts);

@@ -2,7 +2,7 @@ import { LOGIN, LOGOUT } from '../actions/actionTypes';
 
 const initialState = {
   isLoggedIn: false,
-  productListData: null
+  productsListData: null
 };
 
 export default (state = initialState, action) => {
