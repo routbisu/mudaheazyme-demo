@@ -1,8 +1,18 @@
 import React, { Component } from 'react';
 import './Header.scss';
+import { connect } from 'react-redux';
+import { login } from '../../actions/authActions';
 
-export default class Header extends Component {
+class Header extends Component {
   render() {
+    const loginMenuItem = (
+      <li className="nav-item">
+        <a className="nav-link" href="#" onClick={this.props.login}>
+          Login / Sign-up
+        </a>
+      </li>
+    );
+
     return (
       <div>
         <header className="header">
@@ -21,11 +31,7 @@ export default class Header extends Component {
                 Notification
               </a>
             </li>
-            <li className="nav-item">
-              <a className="nav-link" href="#">
-                Login / Sign-up
-              </a>
-            </li>
+            {this.props.isLoggedIn ? null : loginMenuItem}
             <li className="nav-item">
               <a className="nav-link" href="#">
                 Help
@@ -40,3 +46,12 @@ export default class Header extends Component {
     );
   }
 }
+
+const mapStateToProps = state => ({
+  isLoggedIn: state.authState.isLoggedIn
+});
+
+export default connect(
+  mapStateToProps,
+  { login }
+)(Header);

@@ -1,4 +1,4 @@
-import { LOGIN, LOGOUT } from '../actions/actionTypes';
+import { LIST_PRODUCTS } from '../actions/actionTypes';
 
 const initialState = {
   isLoggedIn: false,
@@ -7,16 +7,10 @@ const initialState = {
 
 export default (state = initialState, action) => {
   switch (action.type) {
-    case LOGIN:
+    case LIST_PRODUCTS:
       return {
         ...state,
-        isLoggedIn: true
-      };
-
-    case LOGOUT:
-      return {
-        ...state,
-        isLoggedIn: false
+        productListData: action.payload
       };
 
     default:

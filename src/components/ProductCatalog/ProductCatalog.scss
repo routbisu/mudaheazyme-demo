@@ -8,6 +8,7 @@
   margin-right: auto;
   padding-left: 12%;
   padding-right: 12%;
+  padding-bottom: 10%;
 
   .product-catalog-heading {
     color: $product-catalog-heading-color;
@@ -18,12 +19,14 @@
   }
 
   .product-catalog {
+    height: 95%;
     border: 1px solid $product-catalog-border-color;
     @include border-radius(4px);
     padding: 10px;
     margin-top: 10px;
     margin-bottom: 10px;
     width: 140px;
+    position: relative;
 
     img {
       width: 95%;
@@ -33,12 +36,14 @@
       font-size: 14px;
       font-weight: bold;
       color: $product-description-color;
+      margin-bottom: 16px;
     }
 
     .product-price {
-      margin-top: 20px;
+      position: absolute;
+      bottom: 5px;
       color: $red-color;
-      font-size: 16px;
+      font-size: 14px;
       font-weight: bold;
     }
   }

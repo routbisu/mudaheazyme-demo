@@ -1,8 +1,16 @@
 import React, { Component } from 'react';
 import './ProductCatalog.scss';
 import ProductImage from './productImage.png';
+import { connect } from 'react-redux';
+import { listProducts } from '../../actions/productListActions';
 
-export default class ProductCatalog extends Component {
+class ProductCatalog extends Component {
+  constructor(props) {
+    super(props);
+
+    this.props.listProducts();
+  }
+
   render() {
     return (
       <div className="product-catalog-container">
@@ -10,50 +18,27 @@ export default class ProductCatalog extends Component {
           <div className="product-catalog-heading">LISTING</div>
         </div>
         <div className="row">
-          <div className="col-md-2 col-6">
-            <div className="product-catalog">
-              <img src={ProductImage} alt="" />
-              <div className="product-description">Nintendo Switch grey full set warranty</div>
-              <div className="product-price">RM1,200</div>
-            </div>
-          </div>
-          <div className="col-md-2 col-6">
-            <div className="product-catalog">
-              <img src={ProductImage} alt="" />
-              <div className="product-description">Nintendo Switch grey full set warranty</div>
-              <div className="product-price">RM1,200</div>
-            </div>
-          </div>
-          <div className="col-md-2 col-6">
-            <div className="product-catalog">
-              <img src={ProductImage} alt="" />
-              <div className="product-description">Nintendo Switch grey full set warranty</div>
-              <div className="product-price">RM1,200</div>
-            </div>
-          </div>
-          <div className="col-md-2 col-6">
-            <div className="product-catalog">
-              <img src={ProductImage} alt="" />
-              <div className="product-description">Nintendo Switch grey full set warranty</div>
-              <div className="product-price">RM1,200</div>
-            </div>
-          </div>
-          <div className="col-md-2 col-6">
-            <div className="product-catalog">
-              <img src={ProductImage} alt="" />
-              <div className="product-description">Nintendo Switch grey full set warranty</div>
-              <div className="product-price">RM1,200</div>
-            </div>
-          </div>
-          <div className="col-md-2 col-6">
-            <div className="product-catalog">
-              <img src={ProductImage} alt="" />
-              <div className="product-description">Nintendo Switch grey full set warranty</div>
-              <div className="product-price">RM1,200</div>
-            </div>
-          </div>
+          {this.props.productListData &&
+            this.props.productListData.map((item, i) => (
+              <div key={i} className="col-md-2 col-6">
+                <div className="product-catalog">
+                  <img src={ProductImage} alt={item.attributes && item.attributes.title} />
+                  <div className="product-description">{item.attributes && item.attributes.title}</div>
+                  <div className="product-price">{item.attributes && item.attributes.price}</div>
+                </div>
+              </div>
+            ))}
         </div>
       </div>
     );
   }
 }
+
+const mapStateToProps = state => ({
+  productListData: state.productsListState.productListData
+});
+
+export default connect(
+  mapStateToProps,
+  { listProducts }
+)(ProductCatalog);
