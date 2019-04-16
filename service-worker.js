@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/mudah-eazy-my/precache-manifest.712ac5cbcf7978a548560e7f71134bdf.js"
+  "/mudaheazyme-demo/precache-manifest.9b7754875e8c6c5dd99381c338a5d006.js"
 );
 
 workbox.clientsClaim();
@@ -28,7 +28,7 @@ self.__precacheManifest = [].concat(self.__precacheManifest || []);
 workbox.precaching.suppressWarnings();
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
 
-workbox.routing.registerNavigationRoute("/mudah-eazy-my/index.html", {
+workbox.routing.registerNavigationRoute("/mudaheazyme-demo/index.html", {
   
   blacklist: [/^\/_/,/\/[^\/]+\.[^\/]+$/],
 });
