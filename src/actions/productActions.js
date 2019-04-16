@@ -3,7 +3,7 @@ import axios from 'axios';
 
 // User Product Listing
 export const listProducts = () => dispatch => {
-  axios.get('http://5b35ede16005b00014c5dc86.mockapi.io/list').then(res => {
+  axios.get('https://5b35ede16005b00014c5dc86.mockapi.io/list').then(res => {
     // Make a callback to the parent with user details from api
     dispatch({
       type: LIST_PRODUCTS,
@@ -14,7 +14,7 @@ export const listProducts = () => dispatch => {
 
 // Product Description
 export const getProductDescription = itemId => dispatch => {
-  axios.get(`http://5b35ede16005b00014c5dc86.mockapi.io/view/${itemId}`).then(res => {
+  axios.get(`https://5b35ede16005b00014c5dc86.mockapi.io/view/${itemId}`).then(res => {
     // Make a callback to the parent with user details from api
     dispatch({
       type: GET_PRODUCT_DESCRIPTION,
@@ -25,7 +25,7 @@ export const getProductDescription = itemId => dispatch => {
 
 // Similar Products
 export const listSimilarProducts = itemId => dispatch => {
-  axios.get(`http://5b35ede16005b00014c5dc86.mockapi.io/similar/${itemId}`).then(res => {
+  axios.get(`https://5b35ede16005b00014c5dc86.mockapi.io/similar/${itemId}`).then(res => {
     // Make a callback to the parent with user details from api
     dispatch({
       type: GET_SIMILAR_PRODUCTS,

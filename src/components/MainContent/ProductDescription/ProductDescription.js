@@ -13,6 +13,12 @@ class ProductDescription extends Component {
 
   render() {
     const item = this.props.productDescriptionData;
+    const prodDesc =
+      item &&
+      item.attributes &&
+      item.attributes.description.split('\\n').map((item, i) => {
+        return <p key={i}>{item}</p>;
+      });
 
     return (
       <div className="prod-desc-container">
@@ -72,9 +78,7 @@ class ProductDescription extends Component {
                   <i className="material-icons">flag</i> Report Ad
                 </div>
               </div>
-              <div className="prod-desc-body">
-                {item.attributes && item.attributes.description.replace(/(?:\r\n|\r|\n)/g, '<br />')}
-              </div>
+              <div className="prod-desc-body">{prodDesc}</div>
             </div>
           </div>
         ) : null}
