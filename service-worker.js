@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/mudaheazyme-demo/precache-manifest.9b7754875e8c6c5dd99381c338a5d006.js"
+  "/mudaheazyme-demo/precache-manifest.89458a8969e6c596c3b8068e2a1e3fa7.js"
 );
 
 workbox.clientsClaim();

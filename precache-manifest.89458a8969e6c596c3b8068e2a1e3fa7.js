@@ -12,19 +12,19 @@ self.__precacheManifest = [
     "url": "/mudaheazyme-demo/static/js/runtime~main.a6a95b15.js"
   },
   {
-    "revision": "d8f470932b06a12e0222",
-    "url": "/mudaheazyme-demo/static/js/main.e2f3ee56.chunk.js"
+    "revision": "b0f4ad23292f483ca9a8",
+    "url": "/mudaheazyme-demo/static/js/main.c000a9b5.chunk.js"
   },
   {
     "revision": "dd04b90501423af24411",
     "url": "/mudaheazyme-demo/static/js/2.1a50851b.chunk.js"
   },
   {
-    "revision": "d8f470932b06a12e0222",
+    "revision": "b0f4ad23292f483ca9a8",
     "url": "/mudaheazyme-demo/static/css/main.67863d7c.chunk.css"
   },
   {
-    "revision": "28d80bae733fb637defa30f03d342f44",
+    "revision": "395cdccc432aa8c54fea89941af6e072",
     "url": "/mudaheazyme-demo/index.html"
   }
 ];
