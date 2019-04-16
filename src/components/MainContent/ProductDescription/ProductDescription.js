@@ -15,11 +15,12 @@ class ProductDescription extends Component {
     const item = this.props.productDescriptionData;
 
     return (
-      <div>
+      <div className="prod-desc-container">
         {item ? (
-          <div className="prod-desc-container">
+          <div>
             <div className="mudah-breadcrumb">
-              Home > Electronics > Games &amp; Consoles > <a href="/">{item.attributes && item.attributes.title}</a>
+              Home > Electronics > Games &amp; Consoles >{' '}
+              <a href={`/#/view/${this.props.match.params.id}`}>{item.attributes && item.attributes.title}</a>
             </div>
             <div className="prod-header">{item.attributes && item.attributes.title}</div>
             <img src={NintendoSwitch} className="product-img" alt="Nintendo" />
